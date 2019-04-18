@@ -50,7 +50,7 @@ dependencies {
     }
     compile "io.micronaut:micronaut-management"
 //tag::discovery-client[]
-//    compile 'io.micronaut:micronaut-discovery-client'
+    compile 'io.micronaut:micronaut-discovery-client'
 //end::discovery-client[]
 
 //tag::k8s-discovery-client[]
