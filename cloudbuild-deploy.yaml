@@ -1,0 +1,12 @@
+steps:
+  - name: 'gcr.io/cloud-builders/gradle'
+    args: ['jibDockerBuild']
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['tag', 'gateway:$TAG_NAME', 'gcr.io/$PROJECT_ID/gateway:$TAG_NAME']
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'gcr.io/$PROJECT_ID/gateway:$TAG_NAME']
+  - name: 'gcr.io/cloud-builders/kubectl'
+    args: ['apply', '-f', 'k8s-deployment.yml']
+    env:
+      - 'CLOUDSDK_COMPUTE_ZONE=${_COMPUTE_ZONE}'
+      - 'CLOUDSDK_CONTAINER_CLUSTER=${_CLUSTER_NAME}'

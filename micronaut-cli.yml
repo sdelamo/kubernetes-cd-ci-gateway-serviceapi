@@ -1,0 +1,5 @@
+profile: service
+defaultPackage: example.micronaut.gateway
+---
+testFramework: junit
+sourceLanguage: java
