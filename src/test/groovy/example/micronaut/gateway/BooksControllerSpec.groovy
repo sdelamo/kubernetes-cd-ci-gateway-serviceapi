@@ -38,7 +38,7 @@ class BooksControllerSpec extends Specification {
 
         then:
         resp.status() == HttpStatus.OK
-        resp.body().size() == 1
+        resp.body().size() == 0
     }
 
 
