@@ -77,9 +77,10 @@ run {
     systemProperty "micronaut.http.services.books.url", 'http://localhost:8081'
 }
 
-//jib {
-//    from {
-//        image = 'gcr.io/distroless/java:debug'
-////        image = 'alvarosanchez/alpine-with-curl'
-//    }
-//}
+task generateBuildInfo(type: example.micronaut.GenerateBuildInfoTask) {
+    projectName = project.name
+    versionPropertyName = "projectVersion"
+    inputFile = file("${projectDir}/gradle.properties")
+    outputFile = file("${buildDir}/classes/java/main/META-INF/build-info.properties")
+}
+classes.dependsOn 'generateBuildInfo'

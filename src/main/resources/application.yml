@@ -2,6 +2,9 @@ micronaut:
   application:
     name: gateway
 endpoints:
+  info:
+    enabled: true
+    sensitive: false
   health:
     enabled: true
     details-visible: ANONYMOUS
