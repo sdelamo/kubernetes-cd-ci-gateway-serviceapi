@@ -3,4 +3,4 @@ data:
   micronaut.http.services.books.url: 'http://books'
 kind: ConfigMap
 metadata:
-  name: books-configmap
+  name: gateway-configmap
