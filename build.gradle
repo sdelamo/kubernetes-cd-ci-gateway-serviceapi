@@ -71,7 +71,6 @@ tasks.withType(JavaCompile){
 
 run {
     systemProperty "micronaut.environments", System.getProperty('micronaut.environments')
-    systemProperty "micronaut.http.services.books.url", 'http://localhost:8081'
 }
 
 task generateBuildInfo(type: example.micronaut.GenerateBuildInfoTask) {
