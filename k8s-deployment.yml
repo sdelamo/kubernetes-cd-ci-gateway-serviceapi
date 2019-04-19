@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: gateway
-          image: gcr.io/micronaut-kubernetes-ci-cd/gatewayenv:0.1
+          image: gcr.io/micronaut-kubernetes-ci-cd/gatewayenv:0.13
           imagePullPolicy: "Always"
           ports:
             - containerPort: 8080
