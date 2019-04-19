@@ -14,18 +14,18 @@ spec:
     spec:
       containers:
         - name: gateway
-          image: gcr.io/micronaut-kubernetes-ci-cd/gateway:0.17
+          image: gcr.io/micronaut-kubernetes-ci-cd/gateway:0.18
           imagePullPolicy: "Always"
           ports:
             - containerPort: 8080
           env:
             - name: JAVA_TOOL_OPTIONS
               value: "-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=localhost:5005"
-            - name: MICRONAUT_HTTP_SERVICES_BOOKS_URL
-              valueFrom:
-                configMapKeyRef:
-                  key: micronaut.http.services.books.url
-                  name: gateway-configmap
+#            - name: MICRONAUT_HTTP_SERVICES_BOOKS_URL
+#              valueFrom:
+#                configMapKeyRef:
+#                  key: micronaut.http.services.books.url
+#                  name: gateway-configmap
           readinessProbe:
             httpGet:
               path: /ready
