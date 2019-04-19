@@ -1,10 +1,6 @@
 micronaut:
   application:
     name: gateway
-#  http:
-#    services:
-#      books:
-#        url: 'http://books:8080'
 endpoints:
   info:
     enabled: true
