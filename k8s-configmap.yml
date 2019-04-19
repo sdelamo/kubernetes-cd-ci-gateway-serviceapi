@@ -1,6 +1,0 @@
-apiVersion: v1
-data:
-  micronaut.http.services.books.url: 'http://books'
-kind: ConfigMap
-metadata:
-  name: gateway-configmap

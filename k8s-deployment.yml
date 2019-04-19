@@ -1,31 +1,26 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: gateway
+  name: gatewayenv
 spec:
   selector:
     matchLabels:
-      app: gateway
+      app: gatewayenv
   replicas: 1
   template:
     metadata:
       labels:
-        app: gateway
+        app: gatewayenv
     spec:
       containers:
         - name: gateway
-          image: gcr.io/micronaut-kubernetes-ci-cd/gateway:0.12
+          image: gcr.io/micronaut-kubernetes-ci-cd/gatewayenv:0.1
           imagePullPolicy: "Always"
           ports:
             - containerPort: 8080
           env:
             - name: JAVA_TOOL_OPTIONS
               value: "-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=localhost:5005"
-            - name: MICRONAUT_HTTP_SERVICES_BOOKS_URL
-              valueFrom:
-                configMapKeyRef:
-                  key: micronaut.http.services.books.url
-                  name: gateway-configmap
           readinessProbe:
             httpGet:
               path: /ready
@@ -43,10 +38,10 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: gateway
+  name: gatewayenv
 spec:
   selector:
-    app: gateway
+    app: gatewayenv
   type: LoadBalancer
   ports:
     - protocol: "TCP"
