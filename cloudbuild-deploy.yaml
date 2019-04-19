@@ -5,7 +5,7 @@ steps:
   - name: 'gcr.io/cloud-builders/gradle'
     args: ['jibDockerBuild']
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['tag', 'gateway:$TAG_NAME', 'gcr.io/$PROJECT_ID/gateway:$TAG_NAME']
+    args: ['tag', 'gatewayapi:$TAG_NAME', 'gcr.io/$PROJECT_ID/gatewayapi:$TAG_NAME']
   - name: 'gcr.io/cloud-builders/docker'
     args: ['push', 'gcr.io/$PROJECT_ID/gateway:$TAG_NAME']
   - name: 'gcr.io/cloud-builders/kubectl'
