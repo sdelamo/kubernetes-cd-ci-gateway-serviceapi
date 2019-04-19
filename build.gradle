@@ -50,11 +50,11 @@ dependencies {
     }
     compile "io.micronaut:micronaut-management"
 //tag::discovery-client[]
-    compile 'io.micronaut:micronaut-discovery-client'
+//    compile 'io.micronaut:micronaut-discovery-client'
 //end::discovery-client[]
 
 //tag::k8s-discovery-client[]
-//    runtime "io.micronaut.kubernetes:micronaut-kubernetes-discovery-client:$micronautKubernetesDiscoveryClientVersion"
+    runtime "io.micronaut.kubernetes:micronaut-kubernetes-discovery-client:$micronautKubernetesDiscoveryClientVersion"
 //end::k8s-discovery-client[]
 }
 

@@ -16,5 +16,5 @@
     <logger name="io.micronaut.management" level="TRACE"/>
     <logger name="io.micronaut.http.client" level="TRACE"/>
     <logger name="io.micronaut.kubernetes" level="TRACE"/>
-
+    <logger name="io.micronaut.discovery.kubernetes" level="TRACE"/>
 </configuration>
